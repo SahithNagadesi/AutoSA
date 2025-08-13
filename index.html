@@ -11,9 +11,29 @@
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
         }
+        /* Header styling */
+        .header {
+            background-color: #0056b3; /* Credera blue */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .header img {
+            height: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: normal;
+        }
+        /* Embed container */
         .embed-container {
             width: 100%;
-            height: 100vh; /* Full screen height */
+            height: calc(100vh - 50px); /* Subtract header height */
             box-sizing: border-box;
         }
         pega-embed {
@@ -23,9 +43,31 @@
         }
     </style>
 </head>
-<body style="margin:0; padding:0;">
-<script src='https://areteans-i25-plf.pegatsdemo.com/prweb/PRRestService/c11nsvc/v1/pega-embed.js' ></script>
-<pega-embed id='theEmbed' action='createCase' caseTypeID='Cred-AutomotiveSA-Work-Lead-Ind' themeID='pzCosmosDefault' casePage='assignment' appAlias='automotivesa' pegaServerUrl='https://areteans-i25-plf.pegatsdemo.com/prweb/' autoReauth='true' authService='pega' clientId='65312119577740237574' UserIdentifier='sahith' Password='cnVsZXM=' style='width:100%'>
-</pega-embed>
+<body>
+    <!-- Header with logo & text -->
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Credera_logo.png" alt="Credera Logo">
+        <h1>Credera Motors</h1>
+    </div>
+
+    <!-- Pega Embed -->
+    <div class="embed-container">
+        <script src='https://areteans-i25-plf.pegatsdemo.com/prweb/PRRestService/c11nsvc/v1/pega-embed.js'></script>
+        <pega-embed
+            id='theEmbed'
+            action='createCase'
+            caseTypeID='Cred-AutomotiveSA-Work-Lead-Ind'
+            themeID='pzCosmosDefault'
+            casePage='assignment'
+            appAlias='automotivesa'
+            pegaServerUrl='https://areteans-i25-plf.pegatsdemo.com/prweb/'
+            autoReauth='true'
+            authService='pega'
+            clientId='65312119577740237574'
+            UserIdentifier='sahith'
+            Password='cnVsZXM='
+            style='width:100%; height:100%;'>
+        </pega-embed>
+    </div>
 </body>
 </html>
